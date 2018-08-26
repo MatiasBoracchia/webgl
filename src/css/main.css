@@ -1,0 +1,27 @@
+body {
+    background-color: #f6f6f6;
+}
+
+nav.navbar.navbar-expand-lg.navbar-light {
+    background-color: white;
+    -webkit-box-shadow: 0 30px 30px 0 rgba(0, 0, 0, .09);
+    -moz-box-shadow: 0 30px 30px 0 rgba(0, 0, 0, .09);
+    box-shadow: 0 30px 30px 0 rgba(0, 0, 0, .09);
+}
+
+nav.navbar.navbar-expand-lg.navbar-light a.navbar-brand {
+    color: #a3a3a3;
+    font-weight: 100;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+#demo-canvas {
+    background-color: #e6e6e6;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    display: block;
+    margin-top: 72px;
+    width: 100%;
+}

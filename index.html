@@ -22,14 +22,29 @@
 
 </head>
 
-<body onload="webGLStart();">
+<body onload="initDemo();">
 
-    <canvas id="lesson01-canvas" width="500" height="500">
-        
-    </canvas>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <a class="navbar-brand">Introducción a la Computación - WebGL Demo</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <canvas id="demo-canvas"></canvas>
+            </div>
+        </div>
+    </div>
 
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/gl-matrix/dist/gl-matrix-min.js"></script>
     <script src="src/js/main.js"></script>
 
 </body>
