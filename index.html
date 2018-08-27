@@ -22,7 +22,7 @@
 
 </head>
 
-<body onload="initDemo();">
+<body>
 
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
@@ -34,17 +34,60 @@
         </div>
     </nav>
 
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-12">
-                <canvas id="demo-canvas"></canvas>
+            <div class="col-10 p-0">
+                <!--<canvas id="demo-canvas"></canvas>-->
+                <canvas id="canvas"></canvas>
+            </div>
+            <div class="col-2 p-0">
+                <div id="ui">
+                    <div id="x"></div>
+                    <div id="y"></div>
+                    <div id="z"></div>
+                    <div id="angleX"></div>
+                    <div id="angleY"></div>
+                    <div id="angleZ"></div>
+                </div>
             </div>
         </div>
     </div>
 
+
+    <!-- vertex shader -->
+    <script id="3d-vertex-shader" type="x-shader/x-vertex">
+        attribute vec4 a_position;
+        attribute vec4 a_color;
+
+        uniform mat4 u_matrix;
+
+        varying vec4 v_color;
+
+        void main() {
+          // Multiply the position by the matrix.
+          gl_Position = u_matrix * a_position;
+
+          // Pass the color to the fragment shader.
+          v_color = a_color;
+        }
+    </script>
+    <!-- fragment shader -->
+    <script id="3d-fragment-shader" type="x-shader/x-fragment">
+        precision mediump float;
+
+        // Passed in from the vertex shader.
+        varying vec4 v_color;
+
+        void main() {
+           gl_FragColor = v_color;
+        }
+    </script>
+
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="node_modules/gl-matrix/dist/gl-matrix-min.js"></script>
+    <script src="https://webglfundamentals.org/webgl/resources/webgl-utils.js"></script>
+    <script src="https://webglfundamentals.org/webgl/resources/webgl-lessons-ui.js"></script>
     <script src="src/js/main.js"></script>
 
 </body>
