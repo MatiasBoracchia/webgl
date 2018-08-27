@@ -272,7 +272,7 @@ function main() {
 
     var translation = [480, 240, 0];
     var rotation = [degToRad(40), degToRad(25), degToRad(325)];
-    var scale = [2, 2, 2];
+    var scale = [1.5, 1.5, 1.5];
 
     drawScene();
 
@@ -372,7 +372,7 @@ function main() {
         // Draw the geometry.
         var primitiveType = gl.TRIANGLES;
         var offset = 0;
-        var count = 16 * 6;
+        var count = 6 * 16;
         gl.drawArrays(primitiveType, offset, count);
     }
 }
